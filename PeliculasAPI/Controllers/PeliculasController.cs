@@ -72,7 +72,7 @@ namespace PeliculasAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
+        public async Task<ActionResult> Put(int id, [FromBody] PeliculaCreacionDTO peliculaCreacionDTO)
         {
             var peliculaDB = await context.Peliculas
                 .Include(x => x.PeliculasActores)

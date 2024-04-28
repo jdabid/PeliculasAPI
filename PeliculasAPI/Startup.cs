@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace PeliculasAPI
 {
@@ -30,7 +31,11 @@ namespace PeliculasAPI
             });
 
             services.AddControllers();
-
+            // Configuración de Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Nombre de tu API", Version = "v1" });
+            });
 
         }
 
@@ -49,6 +54,12 @@ namespace PeliculasAPI
             app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
+
+            // Especificar la ruta de la interfaz de usuario de Swagger
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Películas v1");
+            });
 
             app.UseEndpoints(endpoints =>
             {

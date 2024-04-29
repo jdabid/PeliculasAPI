@@ -3,7 +3,7 @@
 En este proyecto se puede crear películas, actores y géneros, los usuarios podrán modificar las películas agregando o quitando géneros al igual que con los actores.
 
 Utilicé varias tecnologías para crear la aplicación en back-end
-.NET 7, SQL Server, Entity Framework Core, reglas de ruteo, automaper, github.
+.NET 7, SQL Server, Entity Framework Core, reglas de ruteo, automaper, Swagger, github.
 
 # Entidades usadas
 
@@ -16,7 +16,7 @@ Utilicé varias tecnologías para crear la aplicación en back-end
 - PeliculasGeneros: Entidad usada para manejar el modelo varios a varios entre las entidades Película y Género.
 
 ## Entity Framework Core
-
+En el constructor de cada controlador se utiliza la inyección de depencia de la clase ApplicationDbContext.
 
 # Controladores
 
@@ -52,4 +52,12 @@ Utilicé varias tecnologías para crear la aplicación en back-end
 - urlbase/api/generos/id
 ### Delete
 - urlbase/api/generos/id
+
+# Swagger
+Esta implementado en la aplicación, se utilizó para ralizar las pruebas
+
+# url git proyecto angular
+https://github.com/jdabid/pelicuasUI
+
+
 

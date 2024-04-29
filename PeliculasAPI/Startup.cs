@@ -56,10 +56,13 @@ namespace PeliculasAPI
             app.UseAuthorization();
 
             // Especificar la ruta de la interfaz de usuario de Swagger
+            app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Películas v1");
             });
+
+
 
             app.UseEndpoints(endpoints =>
             {
